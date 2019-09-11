@@ -48,7 +48,7 @@
                     <h5><?= "Rp. " . number_format($rd->total, 0, ',', '.') ?></h5>
                   </td>
                   <td class="text-center">
-                    <a href="<?= base_url('Admin/Print/Pembelian/') . $rd->FNO_BELI . "/" . $rd->FK_SUP ?>">
+                    <a href="<?= base_url('Admin/Print/Pembelian/') . $rd->FNO_BELI . "/" . $rd->FK_SUP ?>" target="_blank">
                       <button class="btn btn-info">
                         <span class="glyphicon glyphicon-print"></span>
                       </button>

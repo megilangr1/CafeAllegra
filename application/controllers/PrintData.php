@@ -30,9 +30,10 @@ class PrintData extends CI_Controller
   public function pembelian($id, $sup)
   {
     $data = [
-      'tb' => $this->PrintM->tpembelian($id, $sup)
+      'tb' => $this->PrintM->tpembelian($id, $sup),
+      'sd' => $this->PrintM->tpembelian($id, $sup)->row()
     ];
 
-    $this->load->view('Print/printdata', $data);
+    $this->load->view('Admin/Print/printdata', $data);
   }
 }

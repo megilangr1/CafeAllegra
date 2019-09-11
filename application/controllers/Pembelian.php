@@ -208,6 +208,11 @@ class Pembelian extends CI_Controller
     $this->session->unset_userdata('Pembayaran-Pembelian');
 
 
-    echo "<script>alert('Transaksi Selesai !');window.location='" . base_url('Admin/Pembelian') . "';</script>";
+    echo "<script>
+    alert('Transaksi Selesai !');
+    window.location='" . base_url('Admin/Pembelian') . "';
+    window.open('" . base_url() . "Admin/Print/Pembelian/" . $kode . "/" . $sup . "');
+    </script>";
+    echo "<script></script>";
   }
 }

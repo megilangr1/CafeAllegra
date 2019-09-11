@@ -26,8 +26,83 @@
 </head>
 
 <body>
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <td colspan="2" class="text-center">
+          <h3>Detail Pembelian</h3>
+        </td>
+      </tr>
+      <tr>
+        <td width="50%">
+          <h5 class="text-center">Transaksi <?= $this->uri->segment(3) ?></h5>
+        </td>
+        <td width="50%">
+          <h5 class="text-center">Tanggal Transaksi : <?= $sd->FTGL_BELI ?></h5>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+        </td>
+      </tr>
+    </table>
+  </div>
 
+  <div class="table-responsive">
+    <table class="table">
+      <tr>
+        <td></td>
+        <td width="20%" class="text-left">Nomor Pembelian </td>
+        <td width="5%">:</td>
+        <td><?= $sd->FNO_BELI ?></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td width="20%" class="text-left">Supplier : </td>
+        <td width="5%">:</td>
+        <td><?= $sd->FNA_SUP ?></td>
+      </tr>
+    </table>
+  </div>
 
+  <div class="table-responsive">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <td colspan="4" class="text-center">
+            <h4><b>Data Pembelian</b></h4>
+          </td>
+        </tr>
+        <tr>
+          <th class="text-center">Material</th>
+          <th class="text-center">Qty</th>
+          <th class="text-center">Harga</th>
+          <th class="text-center">Sub Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        $total = 0;
+        foreach ($tb->result() as $r1) {
+          $sub = $r1->FQTY * $r1->FHARGA;
+          $total += $sub;
+          ?>
+          <tr>
+            <td class="text-center"><?= $r1->FN_MAT ?></td>
+            <td class="text-center"><?= $r1->FQTY ?></td>
+            <td class="text-center"><?= "Rp. " . number_format($r1->FHARGA, 0, ',', '.') ?></td>
+            <td class="text-center"><?= "Rp. " . number_format($sub, 0, ',', '.') ?></td>
+          </tr>
+        <?php
+        }
+        ?>
+        <tr>
+          <td colspan="3" class="text-right"><b>Total : </b></td>
+          <td class="text-center"> <?= "Rp. " . number_format($total, 0, ',', '.') ?> </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 
   <!-- jQuery 3 -->
@@ -64,8 +139,8 @@
         'autoWidth': false
       })
     })
+    window.print();
   </script>
-
 </body>
 
 </html>
