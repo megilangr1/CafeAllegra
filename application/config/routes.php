@@ -106,6 +106,9 @@ $route['Admin/Relasi-Material-Supplier/(:any)'] = 'Relasi';
 $route['Admin/Relasi-Material-Supplier/(:any)/Tambah'] = 'Relasi/tambah';
 $route['Admin/Relasi-Material-Supplier/(:any)/Hapus/(:any)'] = 'Relasi/hapus';
 
+$route['Admin/Perkiraan'] = 'Perkiraan';
+$route['Admin/Perkiraan/Tambah'] = 'Perkiraan/tambah';
+
 $route['Admin/Pembelian'] = 'Pembelian';
 $route['Admin/Pembelian/Supplier/(:any)'] = 'Pembelian/supplier/$1';
 $route['Admin/Pembelian/Material'] = 'Pembelian/material';
@@ -117,3 +120,5 @@ $route['Admin/Pembelian/Selesai'] = 'Pembelian/selesai';
 $route['Admin/Transaksi-Pembelian'] = 'DataPembelian';
 
 $route['Admin/Print/Pembelian/(:any)/(:any)'] = 'PrintData/pembelian/$1/$2';
+
+$route['Admin/Hutang-Dagang'] = 'HutangDagang';

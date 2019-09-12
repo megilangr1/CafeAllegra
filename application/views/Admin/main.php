@@ -98,12 +98,15 @@
                   <li><a href="<?= site_url('Admin/Supplier') ?>">Supplier</a></li>
                   <li class="divider"></li>
                   <li><a href="<?= site_url('Admin/Relasi-Material-Supplier') ?>">Relasi Material - Supplier</a></li>
+                  <li class="divider"></li>
+                  <li><a href="<?= site_url('Admin/Perkiraan') ?>">Perkiraan</a></li>
                 </ul>
               </li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Transaksi <span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                   <li><a href="<?= site_url('Admin/Pembelian') ?>">Pembelian</a></li>
+                  <li><a href="<?= site_url('Admin/Hutang-Dagang') ?>">Hutang Dagang</a></li>
                 </ul>
               </li>
               <li class="dropdown">
